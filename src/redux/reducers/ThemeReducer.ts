@@ -1,12 +1,18 @@
 type ThemeState = {
-    theme: string; 
-    
-  };
+    theme: string;
+    mode?: string; // Define optional properties as needed
+    color?: string;
+};
+
+type Action = {
+    type: string;
+    payload: string; // Assuming payload is a string in this example
+};
   
   // Export the type
   export type { ThemeState };
 
-const ThemeReducer = (state = {}, action) => {
+const ThemeReducer = (state = {}, action: Action) => {
     switch(action.type) {
         case 'SET_MODE':
             return {

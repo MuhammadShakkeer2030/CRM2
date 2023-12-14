@@ -1,20 +1,21 @@
-import React, {useEffect} from 'react'
+import { useEffect } from 'react'
 
 import './layout.css'
 
 import Sidebar from '../sidebar/Sidebar'
 import TopNav from '../topnav/TopNav'
-import Routes from '../Routes'
+import RoutesComponents from '../RoutesComponents'
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { useSelector, useDispatch } from 'react-redux'
 
 import ThemeAction from '../../redux/actions/ThemeAction'
+import { RootState } from '../../redux/reducers'
 
 const Layout = () => {
 
-    const themeReducer = useSelector(state => state.ThemeReducer)
+    const themeReducer = useSelector((state: RootState) => state.ThemeReducer)
 
     const dispatch = useDispatch()
 
@@ -30,17 +31,20 @@ const Layout = () => {
 
     return (
         <BrowserRouter>
-            <Route render={(props) => (
-                <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
-                    <Sidebar {...props}/>
-                    <div className="layout__content">
-                        <TopNav/>
-                        <div className="layout__content-main">
-                            <Routes />
+            <Routes>
+                <Route path={'/'} element={
+                    <div className={`layout ${themeReducer?.mode} ${themeReducer?.color}`}>
+                        <Sidebar />
+                        <div className="layout__content">
+                            <TopNav />
+                            <div className="layout__content-main">
+
+                                <RoutesComponents />
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}/>
+                } />
+            </Routes>
         </BrowserRouter>
     )
 }
