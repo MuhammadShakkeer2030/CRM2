@@ -8,7 +8,8 @@ import StatusCard from "./components/status-card/StatusCard";
 import Table from "./components/table/Table";
 import ThemeMenu from "./components/thememenu/ThemeMenu";
 import Topnav from "./components/topnav/TopNav";
-
+import { AdminTable } from "./components/admin_components/AdminTable";
+import { TodoList } from "./components/admin_components/TodoList";
 export {
   Badge,
   Dropdown,
@@ -19,11 +20,28 @@ export {
   Table,
   ThemeMenu,
   Topnav,
+  AdminTable,
+  TodoList
 };
+
+
 // pages
 import PageError from "./pages/PageError";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Products from "./pages/Products";
 import ProfilePage from "./pages/ProflePage";
-export { PageError, Dashboard, Customers, Products, ProfilePage };
+import Admin from "./pages/Admin";
+import Compaines from "./pages/Compaines";
+import Users from "./pages/Users";
+
+export {
+  PageError,
+  Dashboard,
+  Customers,
+  Products,
+  ProfilePage,
+  Admin,
+  Compaines,
+  Users,
+};
