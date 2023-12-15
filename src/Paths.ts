@@ -25,4 +25,5 @@ import PageError from "./pages/PageError";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Products from "./pages/Products";
-export { PageError, Dashboard, Customers, Products };
+import ProfilePage from "./pages/ProflePage";
+export { PageError, Dashboard, Customers, Products, ProfilePage };

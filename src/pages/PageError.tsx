@@ -1,7 +1,9 @@
 
 const PageError = () => {
   return (
-    <div className="h-screen w-full  flex justify-center items-start pt-10 text-3xl">Page not found</div>
+    <div className="h-screen min-w-full  flex justify-center items-start pt-10 text-3xl">
+      <h2>Page not found</h2>
+    </div>
   )
 }
 

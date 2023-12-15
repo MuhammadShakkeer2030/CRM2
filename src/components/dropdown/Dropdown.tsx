@@ -1,4 +1,4 @@
-import  {useRef} from 'react'
+import { useRef } from 'react'
 
 import './dropdown.css'
 
@@ -22,10 +22,11 @@ const Dropdown = props => {
     const dropdown_content_el = useRef(null)
 
     clickOutsideRef(dropdown_content_el, dropdown_toggle_el)
-    
+
+    console.log(props)
     return (
         <div className='dropdown'>
-            <button ref={dropdown_toggle_el} className="dropdown__toggle">
+            <button ref={dropdown_toggle_el} className="dropdown__toggle" >
                 {
                     props.icon ? <i className={props.icon}></i> : ''
                 }
@@ -36,13 +37,13 @@ const Dropdown = props => {
                     props.customToggle ? props.customToggle() : ''
                 }
             </button>
-            <div ref={dropdown_content_el} className="dropdown__content">
+            <div ref={dropdown_content_el} className="dropdown__content" >
                 {
                     props.contentData && props.renderItems ? props.contentData.map((item, index) => props.renderItems(item, index)) : ''
                 }
                 {
                     props.renderFooter ? (
-                        <div className="dropdown__footer">
+                        <div className="dropdown__footer" onClick={() => console.log("clicked")}>
                             {props.renderFooter()}
                         </div>
                     ) : ''
@@ -53,3 +54,5 @@ const Dropdown = props => {
 }
 
 export default Dropdown
+
+

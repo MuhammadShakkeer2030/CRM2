@@ -6,7 +6,7 @@ import Sidebar from '../sidebar/Sidebar'
 import TopNav from '../topnav/TopNav'
 import RoutesComponents from '../RoutesComponents'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter,  } from 'react-router-dom'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -15,23 +15,23 @@ import { RootState } from '../../redux/reducers'
 
 const Layout = () => {
 
-    const themeReducer = useSelector((state: RootState) => state.ThemeReducer)
+    const themeReducer = useSelector((state: RootState) => state.theme)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        const themeClass = localStorage.getItem('themeMode', 'theme-mode-light')
+        const themeClass = localStorage.getItem('themeMode')
 
-        const colorClass = localStorage.getItem('colorMode', 'theme-mode-light')
+        const colorClass = localStorage.getItem('colorMode')
 
         dispatch(ThemeAction.setMode(themeClass))
 
         dispatch(ThemeAction.setColor(colorClass))
     }, [dispatch])
-
+console.log(themeReducer)
     return (
         <BrowserRouter>
-            <div className={`layout ${themeReducer?.mode} ${themeReducer?.color}`}>
+            <div className={`layout ${themeReducer?.mode} ${themeReducer?.color}`} >
                 <Sidebar />
                 <div className="layout__content">
                     <TopNav />

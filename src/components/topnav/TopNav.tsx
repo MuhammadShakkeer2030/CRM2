@@ -17,7 +17,7 @@ import user_menu from '../../assets/JsonData/user_menus.json'
 interface NavProps {
 }
 const curr_user = {
-    display_name: 'Doğukan Taha ',
+    display_name: 'Muhammad Saheer ',
     image: user_image
 }
 
@@ -31,7 +31,7 @@ const renderNotificationItem = (item, index) => (
 const renderUserToggle = (user) => (
     <div className="topnav__right-user">
         <div className="topnav__right-user__image">
-            <img src={user.image} alt="" />
+            <img src={user.image} alt="" className='object-fill' />
         </div>
         <div className="topnav__right-user__name">
             {user.display_name}
