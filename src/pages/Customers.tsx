@@ -30,7 +30,7 @@ const renderBody = (item, index) => (
 
 const Customers = () => {
     return (
-        <div>
+        <div className=''>
             <h2 className="page-header">
                 customers
             </h2>

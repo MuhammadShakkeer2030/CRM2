@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-import { createStore } from 'redux'
 
 import { Provider } from 'react-redux'
 
@@ -15,9 +14,10 @@ import './assets/css/theme.css'
 import './assets/css/index.css'
 
 import Layout from './components/layout/Layout'
+import { configureStore } from '@reduxjs/toolkit'
 
-const store = createStore(
-  rootReducer
+const store = configureStore(
+  { reducer: rootReducer }
 )
 
 document.title = 'Tua CRM'

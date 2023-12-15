@@ -1,15 +1,17 @@
-import React from 'react'
+import { FC } from "react"
+import { SidebarRoutesTypes } from "../../types/jsonTypes"
 
-const SidebarItem = props => {
 
-    const active = props.active ? 'active' : ''
+const SidebarItem:FC<SidebarRoutesTypes[] >=( {active,icon,title}) => {
+
+    const actived = active ? 'active' : ''
 
     return (
         <div className="sidebar__item">
-            <div className={`sidebar__item-inner ${active}`}>
-                <i className={props.icon}></i>
+            <div className={`sidebar__item-inner ${actived}`}>
+                <i className={icon}></i>
                 <span>
-                    {props.title}
+                    {title}
                 </span>
             </div>
         </div>

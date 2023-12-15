@@ -31,20 +31,19 @@ const Layout = () => {
 
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path={'/'} element={
-                    <div className={`layout ${themeReducer?.mode} ${themeReducer?.color}`}>
-                        <Sidebar />
-                        <div className="layout__content">
-                            <TopNav />
-                            <div className="layout__content-main">
+            <div className={`layout ${themeReducer?.mode} ${themeReducer?.color}`}>
+                <Sidebar />
+                <div className="layout__content">
+                    <TopNav />
+                    <div className="layout__content-main">
 
-                                <RoutesComponents />
-                            </div>
-                        </div>
+                            <RoutesComponents />
+
+                        
                     </div>
-                } />
-            </Routes>
+                </div>
+            </div>
+
         </BrowserRouter>
     )
 }

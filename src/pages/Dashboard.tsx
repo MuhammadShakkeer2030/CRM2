@@ -1,4 +1,3 @@
-import React, {useEffect} from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -13,8 +12,8 @@ import Table from '../components/table/Table'
 import Badge from '../components/badge/Badge'
 
 import statusCards from '../assets/JsonData/status-card-data.json'
-
-const chartOptions = {
+import { BodyProps, ChartsProps, CustomerProps, LatestOrderProps } from '../types/types'
+const chartOptions:ChartsProps = {
     series: [{
         name: 'Online Customers',
         data: [40,70,20,90,36,80,30,91,60]
@@ -45,7 +44,7 @@ const chartOptions = {
     }
 }
 
-const topCustomers = {
+const topCustomers:CustomerProps = {
     head: [
         'user',
         'total orders',
@@ -80,11 +79,11 @@ const topCustomers = {
     ]
 }
 
-const renderCusomerHead = (item, index) => (
+const renderCusomerHead = (item, index:number) => (
     <th key={index}>{item}</th>
 )
 
-const renderCusomerBody = (item, index) => (
+const renderCusomerBody = (item:BodyProps, index:number) => (
     <tr key={index}>
         <td>{item.username}</td>
         <td>{item.order}</td>
@@ -92,7 +91,7 @@ const renderCusomerBody = (item, index) => (
     </tr>
 )
 
-const latestOrders = {
+const latestOrders:LatestOrderProps = {
     header: [
         "order id",
         "user",
@@ -146,7 +145,7 @@ const orderStatus = {
     "refund": "danger"
 }
 
-const renderOrderHead = (item, index) => (
+const renderOrderHead = (item, index:number) => (
     <th key={index}>{item}</th>
 )
 

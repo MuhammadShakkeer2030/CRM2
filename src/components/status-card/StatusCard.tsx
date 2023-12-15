@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import './statuscard.css'
 
-const StatusCard = props => {
+interface StatusProps {
+    icon?: string;
+    count: string;
+    title: string;
+}
+
+const StatusCard: FC<StatusProps> = ({ icon, count, title }) => {
     return (
         <div className='status-card'>
             <div className="status-card__icon">
-                <i className={props.icon}></i>
+                <i className={icon}></i>
             </div>
             <div className="status-card__info">
-                <h4>{props.count}</h4>
-                <span>{props.title}</span>
+                <h4>{count}</h4>
+                <span>{title}</span>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default StatusCard
